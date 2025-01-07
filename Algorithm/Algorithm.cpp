@@ -3,6 +3,8 @@
 #include "MyVector.h"
 #include <list>
 #include "MyList.h"
+#include <stack>
+#include "MyStack.h"
 using namespace std;
 
 
@@ -29,30 +31,54 @@ int main()
 	}
 
 	{
-		//list<int> li;
-		MyList<int> li;
+		////list<int> li;
+		//MyList<int> li;
 
-		MyList<int>::iterator eraseIt;
+		//MyList<int>::iterator eraseIt;
 
-		for (int i = 0; i < 10; i++)
+		//for (int i = 0; i < 10; i++)
+		//{
+		//	if (i == 5)
+		//	{
+		//		eraseIt = li.insert(li.end(), i);
+		//	}
+		//	else
+		//	{
+		//		li.push_back(i);
+		//	}
+		//}
+
+		//li.pop_back();
+
+		//li.erase(eraseIt);
+
+		//for (MyList<int>::iterator it = li.begin(); it != li.end(); it++)
+		//{
+		//	cout << (*it) << endl;
+		//}
+	}
+
+	{
+		//stack<int> s;
+		//stack<int, deque<int>> s;
+		//stack<int, vector<int>> s;
+		//stack<int, list<int>> s;
+		MyStack<int, list<int>> s;
+
+		// 삽입
+		s.push(1);
+		s.push(2);
+		s.push(3);
+
+		while (s.empty() == false)
 		{
-			if (i == 5)
-			{
-				eraseIt = li.insert(li.end(), i);
-			}
-			else
-			{
-				li.push_back(i);
-			}
+			// 최상위 원소 삭제
+			int data = s.top();
+			s.pop();
+
+			cout << data << endl;
 		}
 
-		li.pop_back();
-
-		li.erase(eraseIt);
-
-		for (MyList<int>::iterator it = li.begin(); it != li.end(); it++)
-		{
-			cout << (*it) << endl;
-		}
+		int size = s.size();
 	}
 }
