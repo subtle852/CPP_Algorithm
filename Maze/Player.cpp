@@ -67,6 +67,32 @@ void Player::Init(Board* board)
 			*/
 		}
 	}
+
+	stack<Pos> s;
+
+	for (int i = 0; i < _path.size() - 1; i++)
+	{
+		// 스택의 top과 _path에 다음 가야하는 길 비교
+		if (s.empty() == false && s.top() == _path[i + 1])
+			s.pop();
+		else
+			s.push(_path[i]);
+	}
+
+	// 목적지 도착
+	if (_path.empty() == false)
+		s.push(_path.back());
+
+	vector<Pos> path;
+	while (s.empty() == false)
+	{
+		path.push_back(s.top());
+		s.pop();
+	}
+
+	std::reverse(path.begin(), path.end());
+
+	_path = path;
 }
 
 void Player::Update(uint64 deltaTick)
