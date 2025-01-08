@@ -140,12 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp" />
-    <ClCompile Include="MyList.cpp" />
-    <ClCompile Include="MyQueue.cpp" />
-    <ClCompile Include="MyStack.cpp" />
-    <ClCompile Include="MyVector.cpp" />
+    <ClCompile Include="CreateGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CreateGraph.h" />
     <ClInclude Include="MyList.h" />
     <ClInclude Include="MyQueue.h" />
     <ClInclude Include="MyStack.h" />

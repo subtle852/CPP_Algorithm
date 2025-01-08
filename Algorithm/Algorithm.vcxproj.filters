@@ -18,16 +18,7 @@
     <ClCompile Include="Algorithm.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MyVector.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MyList.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MyStack.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MyQueue.cpp">
+    <ClCompile Include="CreateGraph.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,6 +33,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="MyQueue.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateGraph.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,7 @@
 #include "MyStack.h"
 #include <queue>
 #include "MyQueue.h"
+#include "CreateGraph.h"
 using namespace std;
 
 
@@ -85,20 +86,26 @@ int main()
 	}
 
 	{
-		//queue<int> q;
-		MyVectorQueue<int> q;
-		//MyListQueue<int> q;
+		////queue<int> q;
+		//MyVectorQueue<int> q;
+		////MyListQueue<int> q;
 
-		for (int i = 0; i < 100; i++)
-			q.push(i);
+		//for (int i = 0; i < 100; i++)
+		//	q.push(i);
 
-		while (q.empty() == false)
-		{
-			int value = q.front();
-			q.pop();
-			cout << value << endl;
-		}
+		//while (q.empty() == false)
+		//{
+		//	int value = q.front();
+		//	q.pop();
+		//	cout << value << endl;
+		//}
 
-		int size = q.size();
+		//int size = q.size();
+	}
+
+	{
+		CreateGraph::CreateGraph_1();
+		CreateGraph::CreateGraph_2();
+		CreateGraph::CreateGraph_3();
 	}
 }
