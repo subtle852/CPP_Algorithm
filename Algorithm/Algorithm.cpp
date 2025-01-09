@@ -8,8 +8,9 @@
 #include <queue>
 #include "MyQueue.h"
 #include "CreateGraph.h"
-#include "Dfs.h"
-#include "Bfs.h"
+//#include "Dfs.h"
+//#include "Bfs.h"
+#include "Dijkstra.h"
 using namespace std;
 
 
@@ -153,14 +154,21 @@ int main()
 
 		////////////////////////////////////////////////////
 		//// [인접행렬 버전]
-		CreateGraph_AdjacencyMatrix();
+		//CreateGraph_AdjacencyMatrix();
 
-		discovered = vector<bool>(6, false);
+		//discovered = vector<bool>(6, false);
 
 		//Bfs_AdjacencyMatrix(0);
-		BfsAll_AdjacencyMatrix();
+		//BfsAll_AdjacencyMatrix();
 
 	}
 	#pragma endregion
+	
+#pragma region Dijkstra
+	{
+		CreateGraph();
+		Dijkstra(0);
+	}
+#pragma endregion
 
 }

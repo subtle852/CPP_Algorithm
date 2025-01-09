@@ -44,5 +44,8 @@
     <ClInclude Include="Bfs.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Dijkstra.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
