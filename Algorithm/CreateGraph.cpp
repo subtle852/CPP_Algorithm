@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void CreateGraph::CreateGraph_1()
+void CreateGraph::CreateGraph_Struct()
 {
 	struct Vertex
 	{
@@ -33,7 +33,7 @@ void CreateGraph::CreateGraph_1()
 	}
 }
 
-void CreateGraph::CreateGraph_2()
+void CreateGraph::CreateGraph_AdjacencyList()
 {
 	vector<vector<int>> adjacent(6);
 	adjacent[0] = { 1, 3 };
@@ -58,7 +58,7 @@ void CreateGraph::CreateGraph_2()
 	bool connected2 = (std::find(adj.begin(), adj.end(), 3) != adj.end());
 }
 
-void CreateGraph::CreateGraph_3()
+void CreateGraph::CreateGraph_AdjacencyMatrix()
 {
 	// [X][O][X][O][X][X]
 	// [O][X][O][O][X][X]

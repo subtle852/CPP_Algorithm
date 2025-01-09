@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CreateGraph.h" />
+    <ClInclude Include="Dfs.h" />
     <ClInclude Include="MyList.h" />
     <ClInclude Include="MyQueue.h" />
     <ClInclude Include="MyStack.h" />

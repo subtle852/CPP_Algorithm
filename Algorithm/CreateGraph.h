@@ -3,8 +3,8 @@
 class CreateGraph
 {
 public:
-	static void CreateGraph_1();
-	static void CreateGraph_2();
-	static void CreateGraph_3();
+	static void CreateGraph_Struct();
+	static void CreateGraph_AdjacencyList();
+	static void CreateGraph_AdjacencyMatrix();
 
 };

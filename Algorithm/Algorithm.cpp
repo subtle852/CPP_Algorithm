@@ -8,11 +8,13 @@
 #include <queue>
 #include "MyQueue.h"
 #include "CreateGraph.h"
+#include "Dfs.h"
 using namespace std;
 
 
 int main()
 {
+	#pragma region vector 구현
 	{
 		////vector<int> v;
 		//MyVector<int> v;
@@ -32,7 +34,9 @@ int main()
 		//v.clear();
 		//cout << v.size() << " " << v.capacity() << endl;
 	}
+	#pragma endregion
 
+	#pragma region list 구현
 	{
 		////list<int> li;
 		//MyList<int> li;
@@ -60,7 +64,9 @@ int main()
 		//	cout << (*it) << endl;
 		//}
 	}
+	#pragma endregion
 
+	#pragma region stack 구현
 	{
 		////stack<int> s;
 		////stack<int, deque<int>> s;
@@ -84,7 +90,9 @@ int main()
 
 		//int size = s.size();
 	}
+	#pragma endregion
 
+	#pragma region queue 구현
 	{
 		////queue<int> q;
 		//MyVectorQueue<int> q;
@@ -102,10 +110,33 @@ int main()
 
 		//int size = q.size();
 	}
+	#pragma endregion
 
+	#pragma region 그래프 구현
 	{
-		CreateGraph::CreateGraph_1();
-		CreateGraph::CreateGraph_2();
-		CreateGraph::CreateGraph_3();
+		//CreateGraph::CreateGraph_Struct();
+		//CreateGraph::CreateGraph_AdjacencyList();
+		//CreateGraph::CreateGraph_AdjacencyMatrix();
 	}
+	#pragma endregion
+
+	#pragma region DFS
+	{
+		// [인접리스트 버전]
+		//CreateGraph_AdjacencyList();
+
+		// 하나의 정점만 실행
+		//visited = vector<bool>(6, false);
+		//Dfs_AdjacencyList(0);
+
+		// 모든 정점 실행 (트리가 아닌 단방향 그래프이기에)
+		//DfsAll_AdjacencyList();
+
+		//////////////////////////////////////////////////
+		// [인접행렬 버전]
+		CreateGraph_AdjacencyMatrix();
+		DfsAll_AdjacencyMatrix();
+	}
+	#pragma endregion
+
 }
