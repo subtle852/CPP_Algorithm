@@ -9,6 +9,7 @@
 #include "MyQueue.h"
 #include "CreateGraph.h"
 #include "Dfs.h"
+#include "Bfs.h"
 using namespace std;
 
 
@@ -122,20 +123,43 @@ int main()
 
 	#pragma region DFS
 	{
+		//// [인접리스트 버전]
+		////CreateGraph_AdjacencyList();
+
+		//// 하나의 정점만 실행
+		////visited = vector<bool>(6, false);
+		////Dfs_AdjacencyList(0);
+
+		//// 모든 정점 실행 (트리가 아닌 단방향 그래프이기에)
+		////DfsAll_AdjacencyList();
+
+		////////////////////////////////////////////////////
+		//// [인접행렬 버전]
+		//CreateGraph_AdjacencyMatrix();
+		//DfsAll_AdjacencyMatrix();
+	}
+	#pragma endregion
+
+	#pragma region BFS
+	{
 		// [인접리스트 버전]
 		//CreateGraph_AdjacencyList();
 
-		// 하나의 정점만 실행
-		//visited = vector<bool>(6, false);
-		//Dfs_AdjacencyList(0);
+		//discovered = vector<bool>(6, false);
 
-		// 모든 정점 실행 (트리가 아닌 단방향 그래프이기에)
-		//DfsAll_AdjacencyList();
+		//Bfs_AdjacencyList(0);
+		//BfsAll_AdjacencyList();
 
-		//////////////////////////////////////////////////
-		// [인접행렬 버전]
+
+		////////////////////////////////////////////////////
+		//// [인접행렬 버전]
 		CreateGraph_AdjacencyMatrix();
-		DfsAll_AdjacencyMatrix();
+
+		discovered = vector<bool>(6, false);
+
+		//Bfs_AdjacencyMatrix(0);
+		BfsAll_AdjacencyMatrix();
+
 	}
 	#pragma endregion
 
