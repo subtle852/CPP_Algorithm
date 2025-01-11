@@ -1,22 +1,22 @@
 #pragma once
 
 template<typename T>
-class Node
+class NodeForList
 {
 public:
-	Node() : _prev(nullptr), _next(nullptr), _data(T())
+	NodeForList() : _prev(nullptr), _next(nullptr), _data(T())
 	{
 
 	}
 
-	Node(const T& value) : _prev(nullptr), _next(nullptr), _data(value)
+	NodeForList(const T& value) : _prev(nullptr), _next(nullptr), _data(value)
 	{
 
 	}
 
 public:
-	Node* _prev;
-	Node* _next;
+	NodeForList* _prev;
+	NodeForList* _next;
 	T		_data;
 };
 
@@ -29,7 +29,7 @@ public:
 
 	}
 
-	Iterator(Node<T>* node) : _node(node)
+	Iterator(NodeForList<T>* node) : _node(node)
 	{
 
 	}
@@ -81,7 +81,7 @@ public:
 	}
 
 public:
-	Node<T>* _node;
+	NodeForList<T>* _node;
 };
 
 template<typename T>
@@ -91,8 +91,8 @@ public:
 	MyList() : _size(0)
 	{
 		// [head] <-> ... <-> [tail]
-		_head = new Node<T>();
-		_tail = new Node<T>();
+		_head = new NodeForList<T>();
+		_tail = new NodeForList<T>();
 		_head->_next = _tail;
 		_tail->_prev = _head;
 	}
@@ -120,10 +120,10 @@ private:
 
 	// [head] <-> [1] <-> [prevNode] <-> [before] <-> [tail]
 	// [head] <-> [1] <-> [prevNode] <-> [newNode] <-> [before] <-> [tail]
-	Node<T>* AddNode(Node<T>* before, const T& value)
+	NodeForList<T>* AddNode(NodeForList<T>* before, const T& value)
 	{
-		Node<T>* newNode = new Node<T>(value);
-		Node<T>* prevNode = before->_prev;
+		NodeForList<T>* newNode = new NodeForList<T>(value);
+		NodeForList<T>* prevNode = before->_prev;
 
 		prevNode->_next = newNode;
 		newNode->_prev = prevNode;
@@ -138,10 +138,10 @@ private:
 
 	// [head] <-> [prevNode] <-> [node] <-> [nextNode] <-> [tail]
 	// [head] <-> [prevNode] <-> [nextNode] <-> [tail]
-	Node<T>* RemoveNode(Node<T>* node)
+	NodeForList<T>* RemoveNode(NodeForList<T>* node)
 	{
-		Node<T>* prevNode = node->_prev;
-		Node<T>* nextNode = node->_next;
+		NodeForList<T>* prevNode = node->_prev;
+		NodeForList<T>* nextNode = node->_next;
 
 		prevNode->_next = nextNode;
 		nextNode->_prev = prevNode;
@@ -163,18 +163,18 @@ public:
 
 	iterator insert(iterator it, const T& value)// it '앞에' 추가
 	{
-		Node<T>* node = AddNode(it._node, value);
+		NodeForList<T>* node = AddNode(it._node, value);
 		return iterator(node);
 	}
 
 	iterator erase(iterator it)
 	{
-		Node<T>* node = RemoveNode(it._node);
+		NodeForList<T>* node = RemoveNode(it._node);
 		return iterator(node);
 	}
 
 private:
-	Node<T>* _head;
-	Node<T>* _tail;
+	NodeForList<T>* _head;
+	NodeForList<T>* _tail;
 	int			_size;
 };

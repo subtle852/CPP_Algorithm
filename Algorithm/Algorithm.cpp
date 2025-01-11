@@ -10,7 +10,8 @@
 #include "CreateGraph.h"
 //#include "Dfs.h"
 //#include "Bfs.h"
-#include "Dijkstra.h"
+//#include "Dijkstra.h"
+#include "Tree.h"
 using namespace std;
 
 
@@ -164,11 +165,22 @@ int main()
 	}
 	#pragma endregion
 	
-#pragma region Dijkstra
+	#pragma region Dijkstra
 	{
-		CreateGraph();
-		Dijkstra(0);
+		//CreateGraph();
+		//Dijkstra(0);
 	}
-#pragma endregion
+	#pragma endregion
+
+	#pragma region Tree
+	{
+		NodeRef root = CreateTree();
+
+		PrintTree(root, 0);
+
+		int height = GetHeight(root);
+		cout << "Tree Height : " << height << endl;
+	}
+	#pragma endregion
 
 }
