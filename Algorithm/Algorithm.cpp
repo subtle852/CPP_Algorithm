@@ -12,6 +12,7 @@
 //#include "Bfs.h"
 //#include "Dijkstra.h"
 #include "Tree.h"
+#include "MyPriorityQueue.h"
 using namespace std;
 
 
@@ -174,13 +175,33 @@ int main()
 
 	#pragma region Tree
 	{
-		NodeRef root = CreateTree();
+		//NodeRef root = CreateTree();
 
-		PrintTree(root, 0);
+		//PrintTree(root, 0);
 
-		int height = GetHeight(root);
-		cout << "Tree Height : " << height << endl;
+		//int height = GetHeight(root);
+		//cout << "Tree Height : " << height << endl;
 	}
 	#pragma endregion
 
+	#pragma region priority queue 구현
+	{
+		MyPriorityQueue<int, vector<int>, greater<int>> pq;
+
+		pq.push(100);
+		pq.push(300);
+		pq.push(200);
+		pq.push(500);
+		pq.push(400);
+
+		while (pq.empty() == false)
+		{
+			int value = pq.top();
+			pq.pop();
+
+			cout << value << endl;
+		}
+
+	}
+	#pragma endregion
 }
