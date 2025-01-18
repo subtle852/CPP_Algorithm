@@ -15,6 +15,7 @@
 #include "MyPriorityQueue.h"
 #include "BinarySearch.h"
 #include "BinarySearchTree.h"
+#include <thread>
 using namespace std;
 
 
@@ -217,20 +218,51 @@ int main()
 
 	#pragma region 이진탐색트리 구현
 	{
+		//BinarySearchTree bst;
+
+		//bst.Insert(30);
+		//bst.Insert(10);
+		//bst.Insert(20);
+		//bst.Insert(25);
+		//bst.Insert(26);
+		//bst.Insert(40);
+		//bst.Insert(50);
+
+		//bst.Delete(20);
+		//bst.Delete(26);
+
+		//bst.Print();
+	}
+	#pragma endregion
+
+	#pragma region 레드블랙트리 구현
+	{
 		BinarySearchTree bst;
 
 		bst.Insert(30);
-		bst.Insert(10);
-		bst.Insert(20);
-		bst.Insert(25);
-		bst.Insert(26);
-		bst.Insert(40);
-		bst.Insert(50);
-
-		bst.Delete(20);
-		bst.Delete(26);
-
 		bst.Print();
+		this_thread::sleep_for(1s);
+
+		bst.Insert(10);
+		bst.Print();
+		this_thread::sleep_for(1s);
+
+		bst.Insert(20);
+		bst.Print();
+		this_thread::sleep_for(1s);
+
+		bst.Insert(25);
+		bst.Print();
+		this_thread::sleep_for(1s);
+
+		bst.Insert(40);
+		bst.Print();
+		this_thread::sleep_for(1s);
+
+		bst.Insert(50);
+		bst.Print();
+		this_thread::sleep_for(1s);
 	}
 	#pragma endregion
+
 }
