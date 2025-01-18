@@ -53,5 +53,8 @@
     <ClInclude Include="MyPriorityQueue.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="BinarySearch.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

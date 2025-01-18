@@ -13,6 +13,7 @@
 //#include "Dijkstra.h"
 #include "Tree.h"
 #include "MyPriorityQueue.h"
+#include "BinarySearch.h"
 using namespace std;
 
 
@@ -186,21 +187,29 @@ int main()
 
 	#pragma region priority queue 구현
 	{
-		MyPriorityQueue<int, vector<int>, greater<int>> pq;
+		//MyPriorityQueue<int, vector<int>, greater<int>> pq;
 
-		pq.push(100);
-		pq.push(300);
-		pq.push(200);
-		pq.push(500);
-		pq.push(400);
+		//pq.push(100);
+		//pq.push(300);
+		//pq.push(200);
+		//pq.push(500);
+		//pq.push(400);
 
-		while (pq.empty() == false)
-		{
-			int value = pq.top();
-			pq.pop();
+		//while (pq.empty() == false)
+		//{
+		//	int value = pq.top();
+		//	pq.pop();
 
-			cout << value << endl;
-		}
+		//	cout << value << endl;
+		//}
+
+	}
+	#pragma endregion
+
+	#pragma region 이진 탐색 구현
+	{
+		numbers = vector<int>{ 1, 8, 15, 23, 32, 44, 56, 63, 81, 91 };
+		BinarySearch(81);
 
 	}
 	#pragma endregion
