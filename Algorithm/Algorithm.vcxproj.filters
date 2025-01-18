@@ -21,6 +21,9 @@
     <ClCompile Include="CreateGraph.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="BinarySearchTree.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
@@ -54,6 +57,9 @@
       <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="BinarySearch.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTree.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>

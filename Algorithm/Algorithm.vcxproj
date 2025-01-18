@@ -140,11 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp" />
+    <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="CreateGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bfs.h" />
     <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="CreateGraph.h" />
     <ClInclude Include="Dfs.h" />
     <ClInclude Include="Dijkstra.h" />

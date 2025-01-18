@@ -11,9 +11,10 @@
 //#include "Dfs.h"
 //#include "Bfs.h"
 //#include "Dijkstra.h"
-#include "Tree.h"
+//#include "Tree.h"
 #include "MyPriorityQueue.h"
 #include "BinarySearch.h"
+#include "BinarySearchTree.h"
 using namespace std;
 
 
@@ -208,9 +209,28 @@ int main()
 
 	#pragma region 이진 탐색 구현
 	{
-		numbers = vector<int>{ 1, 8, 15, 23, 32, 44, 56, 63, 81, 91 };
-		BinarySearch(81);
+		//numbers = vector<int>{ 1, 8, 15, 23, 32, 44, 56, 63, 81, 91 };
+		//BinarySearch(81);
 
+	}
+	#pragma endregion
+
+	#pragma region 이진탐색트리 구현
+	{
+		BinarySearchTree bst;
+
+		bst.Insert(30);
+		bst.Insert(10);
+		bst.Insert(20);
+		bst.Insert(25);
+		bst.Insert(26);
+		bst.Insert(40);
+		bst.Insert(50);
+
+		bst.Delete(20);
+		bst.Delete(26);
+
+		bst.Print();
 	}
 	#pragma endregion
 }
