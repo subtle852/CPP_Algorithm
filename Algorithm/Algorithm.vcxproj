@@ -144,6 +144,7 @@
     <ClCompile Include="CreateGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasicSort.h" />
     <ClInclude Include="Bfs.h" />
     <ClInclude Include="BinarySearch.h" />
     <ClInclude Include="BinarySearchTree.h" />

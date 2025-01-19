@@ -16,6 +16,7 @@
 #include "BinarySearch.h"
 #include "BinarySearchTree.h"
 #include <thread>
+#include "BasicSort.h"
 using namespace std;
 
 
@@ -237,32 +238,45 @@ int main()
 
 	#pragma region 레드블랙트리 구현
 	{
-		BinarySearchTree bst;
+		//BinarySearchTree bst;
 
-		bst.Insert(30);
-		bst.Print();
-		this_thread::sleep_for(1s);
+		//bst.Insert(30);
+		//bst.Print();
+		//this_thread::sleep_for(1s);
 
-		bst.Insert(10);
-		bst.Print();
-		this_thread::sleep_for(1s);
+		//bst.Insert(10);
+		//bst.Print();
+		//this_thread::sleep_for(1s);
 
-		bst.Insert(20);
-		bst.Print();
-		this_thread::sleep_for(1s);
+		//bst.Insert(20);
+		//bst.Print();
+		//this_thread::sleep_for(1s);
 
-		bst.Insert(25);
-		bst.Print();
-		this_thread::sleep_for(1s);
+		//bst.Insert(25);
+		//bst.Print();
+		//this_thread::sleep_for(1s);
 
-		bst.Delete(20);
-		bst.Print();
-		this_thread::sleep_for(1s);
+		//bst.Delete(20);
+		//bst.Print();
+		//this_thread::sleep_for(1s);
 
-		bst.Delete(10);
-		bst.Print();
-		this_thread::sleep_for(1s);
+		//bst.Delete(10);
+		//bst.Print();
+		//this_thread::sleep_for(1s);
 	}
 	#pragma endregion
+
+	#pragma region 버블, 선택, 삽입정렬 구현
+	{
+		vector<int> v{ 1, 5, 3, 4, 2 };
+
+		std::sort(v.begin(), v.end());
+
+		//BubbleSort(v);
+		//SelectionSort(v);
+		InsertionSort(v);
+	}
+	#pragma endregion
+
 
 }
