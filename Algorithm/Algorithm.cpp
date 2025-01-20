@@ -19,6 +19,7 @@
 #include "BasicSort.h"
 #include "EfficientSort.h"
 #include "QuickSort.h"
+#include "HashTable.h"
 using namespace std;
 
 
@@ -282,23 +283,31 @@ int main()
 
 	#pragma region 힙, 병합, 퀵소트 구현
 	{
-		vector<int> v;
+		//vector<int> v;
 
-		srand(time(0));
+		//srand(time(0));
 
-		for (int i = 0; i < 50; i++)
-		{
-			int randValue = rand() % 100;
-			v.push_back(randValue);
-		}
+		//for (int i = 0; i < 50; i++)
+		//{
+		//	int randValue = rand() % 100;
+		//	v.push_back(randValue);
+		//}
 
-		//HeapSort(v);
-		//MergeSort(v, 0, v.size() - 1);
+		////HeapSort(v);
+		////MergeSort(v, 0, v.size() - 1);
 
-		QuickSort(v, 0, v.size() - 1);
+		//QuickSort(v, 0, v.size() - 1);
 
-		int a = 0;
+		//int a = 0;
 	}
+	#pragma endregion
+
+	#pragma region 해시테이블
+	{
+		//TestTable();
+		TestHash();
+	}
+	#pragma endregion
 
 
 }
