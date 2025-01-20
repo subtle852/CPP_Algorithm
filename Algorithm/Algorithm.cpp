@@ -18,6 +18,7 @@
 #include <thread>
 #include "BasicSort.h"
 #include "EfficientSort.h"
+#include "QuickSort.h"
 using namespace std;
 
 
@@ -279,7 +280,7 @@ int main()
 	}
 	#pragma endregion
 
-	#pragma region 힙, 병합정렬 구현
+	#pragma region 힙, 병합, 퀵소트 구현
 	{
 		vector<int> v;
 
@@ -292,7 +293,9 @@ int main()
 		}
 
 		//HeapSort(v);
-		MergeSort(v, 0, v.size() - 1);
+		//MergeSort(v, 0, v.size() - 1);
+
+		QuickSort(v, 0, v.size() - 1);
 
 		int a = 0;
 	}
