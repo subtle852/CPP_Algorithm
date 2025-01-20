@@ -151,6 +151,7 @@
     <ClInclude Include="CreateGraph.h" />
     <ClInclude Include="Dfs.h" />
     <ClInclude Include="Dijkstra.h" />
+    <ClInclude Include="EfficientSort.h" />
     <ClInclude Include="MyList.h" />
     <ClInclude Include="MyPriorityQueue.h" />
     <ClInclude Include="MyQueue.h" />

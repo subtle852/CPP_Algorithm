@@ -17,6 +17,7 @@
 #include "BinarySearchTree.h"
 #include <thread>
 #include "BasicSort.h"
+#include "EfficientSort.h"
 using namespace std;
 
 
@@ -268,15 +269,33 @@ int main()
 
 	#pragma region 버블, 선택, 삽입정렬 구현
 	{
-		vector<int> v{ 1, 5, 3, 4, 2 };
+		//vector<int> v{ 1, 5, 3, 4, 2 };
 
-		std::sort(v.begin(), v.end());
+		//std::sort(v.begin(), v.end());
 
-		//BubbleSort(v);
-		//SelectionSort(v);
-		InsertionSort(v);
+		////BubbleSort(v);
+		////SelectionSort(v);
+		//InsertionSort(v);
 	}
 	#pragma endregion
+
+	#pragma region 힙, 병합정렬 구현
+	{
+		vector<int> v;
+
+		srand(time(0));
+
+		for (int i = 0; i < 50; i++)
+		{
+			int randValue = rand() % 100;
+			v.push_back(randValue);
+		}
+
+		//HeapSort(v);
+		MergeSort(v, 0, v.size() - 1);
+
+		int a = 0;
+	}
 
 
 }
