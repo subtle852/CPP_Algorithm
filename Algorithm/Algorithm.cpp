@@ -20,7 +20,8 @@
 #include "EfficientSort.h"
 #include "QuickSort.h"
 #include "HashTable.h"
-#include "DisjointSet.h"
+//#include "DisjointSet.h"
+#include "Kruskal.h"
 using namespace std;
 
 
@@ -312,21 +313,30 @@ int main()
 
 	#pragma region Disjoint Set
 	{
-		DisjointSet teams(1000);
+		//DisjointSet teams(1000);
 
-		teams.Merge(10, 1);
-		int teamId = teams.Find(1);
-		int teamId2 = teams.Find(10);
+		//teams.Merge(10, 1);
+		//int teamId = teams.Find(1);
+		//int teamId2 = teams.Find(10);
 
-		teams.Merge(3, 2);
-		int teamId3 = teams.Find(3);
-		int teamId4 = teams.Find(2);
+		//teams.Merge(3, 2);
+		//int teamId3 = teams.Find(3);
+		//int teamId4 = teams.Find(2);
 
-		teams.Merge(1, 3);
-		int teamId6 = teams.Find(1);
-		int teamId7 = teams.Find(3);
+		//teams.Merge(1, 3);
+		//int teamId6 = teams.Find(1);
+		//int teamId7 = teams.Find(3);
 	}
 	#pragma endregion
 
+	#pragma region Kruskal
+	{
+		CreateGraph_Kruskal();
+
+		vector<CostEdge> selected;
+		int cost = Kruskal(selected);
+
+	}
+	#pragma endregion
 
 }

@@ -73,5 +73,8 @@
     <ClInclude Include="DisjointSet.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Kruskal.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
