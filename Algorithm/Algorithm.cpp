@@ -382,4 +382,41 @@ int main()
 	}
 	#pragma endregion
 
+	#pragma region LIS
+	{
+		int cache[100];
+		vector<int> seq;
+
+		std::function<int(int)> lis = [&](int pos)
+			{
+				// 기저 사항
+
+				// 캐시 확인
+				int& ret = cache[pos];
+				if (ret != -1)
+					return ret;
+
+				// 구하기
+
+				// 최소 seq[pos]은 있으니 1부터 시작
+				ret = 1;
+
+				// 구하기
+				for (int next = pos + 1; next < seq.size(); next++)
+					if (seq[pos] < seq[next])
+						ret = max(ret, 1 + lis(next));
+
+				return ret;
+			};
+
+		::memset(cache, -1, sizeof(cache));
+		seq = vector<int>{ 10, 1, 9, 2, 5, 7 };
+
+		int ret = 0;
+		for (int pos = 0; pos < seq.size(); pos++)
+			ret = max(ret, lis(pos));
+
+		cout << "LIS: " << ret << endl;
+	}
+	#pragma endregion
 }
