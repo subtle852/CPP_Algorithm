@@ -22,6 +22,8 @@
 #include "HashTable.h"
 //#include "DisjointSet.h"
 #include "Kruskal.h"
+#include <windows.h>
+#include <functional>
 using namespace std;
 
 
@@ -331,10 +333,51 @@ int main()
 
 	#pragma region Kruskal
 	{
-		CreateGraph_Kruskal();
+		//CreateGraph_Kruskal();
 
-		vector<CostEdge> selected;
-		int cost = Kruskal(selected);
+		//vector<CostEdge> selected;
+		//int cost = Kruskal(selected);
+
+	}
+	#pragma endregion
+
+	#pragma region DP 입문
+	{
+		std::function<int(int, int)> combination = [&](int n, int r)
+			{
+				if (r == 0 || n == r)
+					return 1;
+
+				return combination(n - 1, r - 1) + combination(n - 1, r);
+			};
+
+		__int64 start = GetTickCount64();
+		int lotto = combination(45, 6);
+		__int64 end = GetTickCount64();
+		cout << end - start << " ms" << endl;
+
+
+		int cache[50][50];
+		std::function<int(int, int)> combination_memo = [&](int n, int r)
+			{ 
+				// 기저 사례
+				if (r == 0 || n == r)
+					return 1;
+
+				// 이미 답을 구한 적 있으면 바로 반환
+				int& ret = cache[n][r];
+				if (ret != -1)
+					return ret;
+
+				// 새로 답을 구해서 캐시에 저장
+				return ret = combination_memo(n - 1, r - 1) + combination_memo(n - 1, r);
+			};
+
+		::memset(cache, -1, sizeof(cache));
+		start = GetTickCount64();
+		lotto = combination_memo(45, 6);
+		end = GetTickCount64();
+		cout << end - start << " ms" << endl;
 
 	}
 	#pragma endregion
