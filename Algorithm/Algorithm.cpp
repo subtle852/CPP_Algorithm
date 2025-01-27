@@ -24,6 +24,8 @@
 #include "Kruskal.h"
 #include <windows.h>
 #include <functional>
+#include "DPIntro.h"
+#include "LIS.h"
 using namespace std;
 
 
@@ -343,37 +345,14 @@ int main()
 
 	#pragma region DP 입문
 	{
-		std::function<int(int, int)> combination = [&](int n, int r)
-			{
-				if (r == 0 || n == r)
-					return 1;
-
-				return combination(n - 1, r - 1) + combination(n - 1, r);
-			};
-
+		// Combination 재귀
 		__int64 start = GetTickCount64();
 		int lotto = combination(45, 6);
 		__int64 end = GetTickCount64();
 		cout << end - start << " ms" << endl;
 
-
-		int cache[50][50];
-		std::function<int(int, int)> combination_memo = [&](int n, int r)
-			{ 
-				// 기저 사례
-				if (r == 0 || n == r)
-					return 1;
-
-				// 이미 답을 구한 적 있으면 바로 반환
-				int& ret = cache[n][r];
-				if (ret != -1)
-					return ret;
-
-				// 새로 답을 구해서 캐시에 저장
-				return ret = combination_memo(n - 1, r - 1) + combination_memo(n - 1, r);
-			};
-
-		::memset(cache, -1, sizeof(cache));
+		// Combination 재귀 + memoization
+		::memset(CombinationCache, -1, sizeof(CombinationCache));
 		start = GetTickCount64();
 		lotto = combination_memo(45, 6);
 		end = GetTickCount64();
@@ -384,32 +363,7 @@ int main()
 
 	#pragma region LIS
 	{
-		int cache[100];
-		vector<int> seq;
-
-		std::function<int(int)> lis = [&](int pos)
-			{
-				// 기저 사항
-
-				// 캐시 확인
-				int& ret = cache[pos];
-				if (ret != -1)
-					return ret;
-
-				// 구하기
-
-				// 최소 seq[pos]은 있으니 1부터 시작
-				ret = 1;
-
-				// 구하기
-				for (int next = pos + 1; next < seq.size(); next++)
-					if (seq[pos] < seq[next])
-						ret = max(ret, 1 + lis(next));
-
-				return ret;
-			};
-
-		::memset(cache, -1, sizeof(cache));
+		::memset(LisCache, -1, sizeof(LisCache));
 		seq = vector<int>{ 10, 1, 9, 2, 5, 7 };
 
 		int ret = 0;
@@ -419,4 +373,12 @@ int main()
 		cout << "LIS: " << ret << endl;
 	}
 	#pragma endregion
+
+	#pragma region TRIANGLE PATH
+	{
+		
+
+	}
+	#pragma endregion
+
 }
