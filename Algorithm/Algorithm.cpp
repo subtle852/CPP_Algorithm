@@ -26,6 +26,7 @@
 #include <functional>
 #include "DPIntro.h"
 #include "LIS.h"
+#include "TrianglePath.h"
 using namespace std;
 
 
@@ -345,38 +346,64 @@ int main()
 
 	#pragma region DP 입문
 	{
-		// Combination 재귀
-		__int64 start = GetTickCount64();
-		int lotto = combination(45, 6);
-		__int64 end = GetTickCount64();
-		cout << end - start << " ms" << endl;
+		//// Combination 재귀
+		//__int64 start = GetTickCount64();
+		//int lotto = combination(45, 6);
+		//__int64 end = GetTickCount64();
+		//cout << end - start << " ms" << endl;
 
-		// Combination 재귀 + memoization
-		::memset(CombinationCache, -1, sizeof(CombinationCache));
-		start = GetTickCount64();
-		lotto = combination_memo(45, 6);
-		end = GetTickCount64();
-		cout << end - start << " ms" << endl;
+		//// Combination 재귀 + memoization
+		//::memset(CombinationCache, -1, sizeof(CombinationCache));
+		//start = GetTickCount64();
+		//lotto = combination_memo(45, 6);
+		//end = GetTickCount64();
+		//cout << end - start << " ms" << endl;
 
 	}
 	#pragma endregion
 
 	#pragma region LIS
 	{
-		::memset(LisCache, -1, sizeof(LisCache));
-		seq = vector<int>{ 10, 1, 9, 2, 5, 7 };
+		//::memset(LisCache, -1, sizeof(LisCache));
+		//seq = vector<int>{ 10, 1, 9, 2, 5, 7 };
 
-		int ret = 0;
-		for (int pos = 0; pos < seq.size(); pos++)
-			ret = max(ret, lis(pos));
+		//int ret = 0;
+		//for (int pos = 0; pos < seq.size(); pos++)
+		//	ret = max(ret, lis(pos));
 
-		cout << "LIS: " << ret << endl;
+		//cout << "LIS: " << ret << endl;
 	}
 	#pragma endregion
 
 	#pragma region TRIANGLE PATH
 	{
-		
+		board = vector<vector<int>>
+		{
+			{6},
+			{1, 2},
+			{3, 7, 4},
+			{9, 4, 1, 7},
+			{2, 7, 5, 9, 4}
+		};
+
+		N = board.size();
+		cache = vector<vector<int>>(N, vector<int>(N, -1));
+		nextX = vector<vector<int>>(N, vector<int>(N));
+
+		int ret = path(0, 0);
+		cout << ret << endl;
+
+		// 경로 만들기
+		int y = 0;
+		int x = 0;
+
+		while (y < N)
+		{
+			cout << board[y][x] << " -> ";
+
+			x = nextX[y][x];
+			y++;
+		}
 
 	}
 	#pragma endregion
