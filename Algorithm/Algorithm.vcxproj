@@ -165,6 +165,7 @@
     <ClInclude Include="QuickSort.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="TrianglePath.h" />
+    <ClInclude Include="TTT.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

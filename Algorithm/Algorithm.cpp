@@ -26,7 +26,8 @@
 #include <functional>
 #include "DPIntro.h"
 #include "LIS.h"
-#include "TrianglePath.h"
+//#include "TrianglePath.h"
+#include "TTT.h"
 using namespace std;
 
 
@@ -377,34 +378,63 @@ int main()
 
 	#pragma region TRIANGLE PATH
 	{
-		board = vector<vector<int>>
+		//board = vector<vector<int>>
+		//{
+		//	{6},
+		//	{1, 2},
+		//	{3, 7, 4},
+		//	{9, 4, 1, 7},
+		//	{2, 7, 5, 9, 4}
+		//};
+
+		//N = board.size();
+		//cache = vector<vector<int>>(N, vector<int>(N, -1));
+		//nextX = vector<vector<int>>(N, vector<int>(N));
+
+		//int ret = path(0, 0);
+		//cout << ret << endl;
+
+		//// 경로 만들기
+		//int y = 0;
+		//int x = 0;
+
+		//while (y < N)
+		//{
+		//	cout << board[y][x] << " -> ";
+
+		//	x = nextX[y][x];
+		//	y++;
+		//}
+
+	}
+	#pragma endregion
+
+	#pragma region TIC TAC TOE
+	{
+		board = vector<vector<char>>
 		{
-			{6},
-			{1, 2},
-			{3, 7, 4},
-			{9, 4, 1, 7},
-			{2, 7, 5, 9, 4}
+			{'o', 'x', 'x'},
+			{'.', 'o', '.'},
+			{'o', '.', '.'}
 		};
 
-		N = board.size();
-		cache = vector<vector<int>>(N, vector<int>(N, -1));
-		nextX = vector<vector<int>>(N, vector<int>(N));
+		for (int i = 0; i < 19683; i++)
+			cache[i] = DEFAULT;
 
-		int ret = path(0, 0);
-		cout << ret << endl;
+		int win = CanWin(board, 'x');
 
-		// 경로 만들기
-		int y = 0;
-		int x = 0;
-
-		while (y < N)
+		switch (win)
 		{
-			cout << board[y][x] << " -> ";
-
-			x = nextX[y][x];
-			y++;
+		case WIN:
+			cout << "Win" << endl;
+			break;
+		case DRAW:
+			cout << "Draw" << endl;
+			break;
+		case LOSE:
+			cout << "Lose" << endl;
+			break;
 		}
-
 	}
 	#pragma endregion
 

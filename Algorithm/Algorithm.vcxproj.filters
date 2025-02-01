@@ -88,5 +88,8 @@
     <ClInclude Include="TrianglePath.h">
       <Filter>소스 파일\DP</Filter>
     </ClInclude>
+    <ClInclude Include="TTT.h">
+      <Filter>소스 파일\DP</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
