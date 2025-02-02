@@ -154,6 +154,7 @@
     <ClInclude Include="DisjointSet.h" />
     <ClInclude Include="DPIntro.h" />
     <ClInclude Include="EfficientSort.h" />
+    <ClInclude Include="Enchant.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="Kruskal.h" />
     <ClInclude Include="LIS.h" />

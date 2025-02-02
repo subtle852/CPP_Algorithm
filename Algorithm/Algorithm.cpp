@@ -27,7 +27,8 @@
 #include "DPIntro.h"
 #include "LIS.h"
 //#include "TrianglePath.h"
-#include "TTT.h"
+//#include "TTT.h"
+#include "Enchant.h"
 using namespace std;
 
 
@@ -411,30 +412,48 @@ int main()
 
 	#pragma region TIC TAC TOE
 	{
-		board = vector<vector<char>>
-		{
-			{'o', 'x', 'x'},
-			{'.', 'o', '.'},
-			{'o', '.', '.'}
-		};
+		//board = vector<vector<char>>
+		//{
+		//	{'o', 'x', 'x'},
+		//	{'.', 'o', '.'},
+		//	{'o', '.', '.'}
+		//};
 
-		for (int i = 0; i < 19683; i++)
-			cache[i] = DEFAULT;
+		//for (int i = 0; i < 19683; i++)
+		//	cache[i] = DEFAULT;
 
-		int win = CanWin(board, 'x');
+		//int win = CanWin(board, 'x');
 
-		switch (win)
-		{
-		case WIN:
-			cout << "Win" << endl;
-			break;
-		case DRAW:
-			cout << "Draw" << endl;
-			break;
-		case LOSE:
-			cout << "Lose" << endl;
-			break;
-		}
+		//switch (win)
+		//{
+		//case WIN:
+		//	cout << "Win" << endl;
+		//	break;
+		//case DRAW:
+		//	cout << "Draw" << endl;
+		//	break;
+		//case LOSE:
+		//	cout << "Lose" << endl;
+		//	break;
+		//}
+	}
+	#pragma endregion
+
+	#pragma region Enchant
+	{
+		N = 4;
+		// +1 +2 +3 +4
+		// +1 +2 +4
+		// +1 +3 +4
+		// +1 +4
+		// +2 +3 +4
+		// +2 +4
+		// +3 +4
+
+		memset(cache, -1, sizeof(cache));
+
+		int ret = Enchant(0);
+		cout << ret << endl;
 	}
 	#pragma endregion
 

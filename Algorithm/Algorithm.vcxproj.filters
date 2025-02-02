@@ -91,5 +91,8 @@
     <ClInclude Include="TTT.h">
       <Filter>소스 파일\DP</Filter>
     </ClInclude>
+    <ClInclude Include="Enchant.h">
+      <Filter>소스 파일\DP</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
