@@ -156,6 +156,7 @@
     <ClInclude Include="EfficientSort.h" />
     <ClInclude Include="Enchant.h" />
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="KartRider.h" />
     <ClInclude Include="Kruskal.h" />
     <ClInclude Include="LIS.h" />
     <ClInclude Include="MyList.h" />

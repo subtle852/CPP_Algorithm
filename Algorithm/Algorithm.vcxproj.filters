@@ -94,5 +94,8 @@
     <ClInclude Include="Enchant.h">
       <Filter>소스 파일\DP</Filter>
     </ClInclude>
+    <ClInclude Include="KartRider.h">
+      <Filter>소스 파일\DP</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

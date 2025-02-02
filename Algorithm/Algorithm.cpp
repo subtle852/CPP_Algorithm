@@ -28,7 +28,8 @@
 #include "LIS.h"
 //#include "TrianglePath.h"
 //#include "TTT.h"
-#include "Enchant.h"
+//#include "Enchant.h"
+#include "KartRider.h"
 using namespace std;
 
 
@@ -441,18 +442,39 @@ int main()
 
 	#pragma region Enchant
 	{
-		N = 4;
-		// +1 +2 +3 +4
-		// +1 +2 +4
-		// +1 +3 +4
-		// +1 +4
-		// +2 +3 +4
-		// +2 +4
-		// +3 +4
+		//N = 4;
+		//// +1 +2 +3 +4
+		//// +1 +2 +4
+		//// +1 +3 +4
+		//// +1 +4
+		//// +2 +3 +4
+		//// +2 +4
+		//// +3 +4
 
-		memset(cache, -1, sizeof(cache));
+		//memset(cache, -1, sizeof(cache));
 
-		int ret = Enchant(0);
+		//int ret = Enchant(0);
+		//cout << ret << endl;
+	}
+	#pragma endregion
+
+	#pragma region KARTRIDER
+	{
+		// 총 이동 시간
+		T = 20;
+
+		// 시간별로 생성되는 신발 등록
+		shoes.push_back(Shoe(0, 0, T, 1));
+		shoes.push_back(Shoe(3, 4, 10, 3));
+		shoes.push_back(Shoe(4, 1, 4, 2));
+		shoes.push_back(Shoe(10, 2, 5, 5));
+		shoes.push_back(Shoe(15, 1, 3, 7));
+		std::sort(shoes.begin(), shoes.end(), [=](Shoe& left, Shoe& right) { return left.time < right.time; });
+
+		// 캐시
+		cache = vector<int>(shoes.size(), -1);
+
+		int ret = Solve(0);
 		cout << ret << endl;
 	}
 	#pragma endregion
